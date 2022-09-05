@@ -28,10 +28,10 @@ data_source_1[["CustomerFirstName", "CustomerLastName"]] = data_source_1["Custom
 # Remove CustomerName attribute in data source 1
 data_source_1 = data_source_1.drop(columns=["CustomerName"]) # alt: .drop(["CustomerName"], axis=1)
 
-# Reorder attributes in data source 1 (TODO)
+# Reorder attributes in data source 1 (Optional)
 
 # Replace 'A' in OrderID with null in data source 2
-data_source_2["OrderID"] = data_source_2["OrderID"].str.replace('A','')
+data_source_2["OrderID"] = data_source_2["OrderID"].str.replace('A', '')
 
 # Parse OrderID data type from string to int in data source 2
 data_source_2["OrderID"] = pd.to_numeric(data_source_2["OrderID"])
@@ -46,7 +46,7 @@ data_source_2 = data_source_2.drop(columns=["TotalDiscount"])
 # Generate TotalDiscount in data source 2 where TotalDiscount = FullPrice * Discount
 data_source_2["TotalDiscount"] = data_source_2["FullPrice"] - data_source_2["ExtendedPrice"]
 
-# Reorder attributes in data source 2 (TODO)
+# Reorder attributes in data source 2 (Optional)
 
 # Concat data sources
 data_sources = pd.concat([data_source_1, data_source_2])
@@ -59,3 +59,7 @@ data_sources = data_sources.drop(columns=["CustomerFirstName", "CustomerLastName
 
 # Write to Excel
 data_sources.to_excel("PythonResult.xlsx")
+
+# Print
+print("Successfully write Excel file. Result examples:")
+print(data_sources.head(10))
