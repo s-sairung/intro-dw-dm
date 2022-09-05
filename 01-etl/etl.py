@@ -1,4 +1,4 @@
-# Imports
+# Import
 import pandas as pd
 
 # Initialize data source 1
@@ -30,7 +30,7 @@ data_source_1 = data_source_1.drop(columns=["CustomerName"]) # alt: .drop(["Cust
 
 # Reorder attributes in data source 1 (Optional)
 
-# Replace 'A' in OrderID with null in data source 2
+# Replace 'A' in OrderID with empty string in data source 2
 data_source_2["OrderID"] = data_source_2["OrderID"].str.replace('A', '')
 
 # Parse OrderID data type from string to int in data source 2
