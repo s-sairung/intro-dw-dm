@@ -24,7 +24,6 @@ plt.xlabel("Number of Clusters k")
 plt.ylabel("Total Within Sum of Square")
 plt.title("The Elbow Method showing the optimal k")
 
-
 # Run model and plot graph
 model = KMeans(n_clusters=3)
 model.fit(df)
